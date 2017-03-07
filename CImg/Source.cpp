@@ -19,16 +19,13 @@ void printMatrix(int ** mat,int width,int height) {
 
 int main()
 {
-	CImg<int> image("tiny.bmp");
+	CImg<unsigned char> image("tiny.bmp");
 
 	auto height = image.height();
 	auto width = image.width();
 
 	auto mat = new int*[width];
-	//for (int i = 0; i < width; i++)
-		//mat[i] = new int[height];
 
-	std::cout<<image.spectrum();
 	for (int i = 0; i < width; i++)
 	{
 		mat[i] = new int[height];
