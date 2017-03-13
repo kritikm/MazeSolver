@@ -147,11 +147,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="dfs.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Maze.cpp" />
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="SaveToFile.cpp" />
-    <ClCompile Include="test.cpp" />
+    <ClCompile Include="setup.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="normal.bmp" />
@@ -162,6 +164,7 @@
     <ClInclude Include="Link.h" />
     <ClInclude Include="Maze.h" />
     <ClInclude Include="Node.h" />
+    <ClInclude Include="dhananjay.h" />
     <ClInclude Include="SaveToFile.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
