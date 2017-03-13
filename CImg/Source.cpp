@@ -8,7 +8,7 @@ void showRelevantNodes(std::vector<Node>);
 void printPathToImage(const cimg_library::CImg<unsigned char> &, std::vector<Node> &, const std::string);
 
 
-int main(int * argCount, char * args[])
+int main()
 {
 	std::string inputPath = "tiny.bmp";
 	std::string outputPath = "tinySol.bmp";
