@@ -8,7 +8,6 @@ class Node
 	Link * top, *bottom, *left, *right;
 
 public:
-	//Constructor
 	Node(int, int, bool);
 	int getX();
 	int getY();
