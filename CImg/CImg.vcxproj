@@ -149,6 +149,7 @@
   <ItemGroup>
     <ClCompile Include="bfs.cpp" />
     <ClCompile Include="dfs.cpp" />
+    <ClCompile Include="GreedyBFS.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Maze.cpp" />
     <ClCompile Include="Node.cpp" />

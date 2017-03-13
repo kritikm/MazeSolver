@@ -7,7 +7,7 @@ using namespace cimg_library;
 using namespace std;
 
 
-int main() {
+int main2() {
 	CImg<unsigned char> image("images/normal.bmp");
 	vector<vector<Node*>> nodes;
 	Node* start = nullptr;
