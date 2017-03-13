@@ -17,9 +17,12 @@ void printMatrix(int ** mat,int width,int height) {
 	}
 }
 
+//int main(int * argCount, char * args[])
 int main()
 {
-	CImg<unsigned char> image("tiny.bmp");
+	//CImg<unsigned char> image(args[1]);
+
+	CImg<unsigned char> image("tiny.png");
 
 	auto height = image.height();
 	auto width = image.width();
@@ -33,14 +36,21 @@ int main()
 			mat[i][j] = image(j, i, 0, 0) / 255;
 	}
 
+	std::cout << "got image\n";
+
+
 	//printMatrix(mat, width, height);
 
 	Maze maze(mat, width, height);
 
 	maze.makeRelevantNodes();
 
-	int ** graph = maze.getGraph();
+	std::cout << "got relevant\n";
+
+	auto graph = maze.getGraph();
 	int graphSize = maze.getNodes().size();
+	auto heur = maze.getHeuristic();
+
 
 	for (int i = 0; i < graphSize; i++)
 	{
@@ -48,13 +58,24 @@ int main()
 			std::cout << graph[i][j] << " ";
 		std::cout << std::endl;
 	}
+	for (auto it = heur.begin(); it != heur.end(); it++)
+		std::cout << *it << std::endl;
+
 	//std::vector<Node> relevantNodes = maze.getNodes();
+	//showRelevantNodes(relevantNodes);
+
+	//auto path = maze.getPath();
+
+	//std::cout << "got path\n";
+
+	//showRelevantNodes(path);
 
 	return 0;
 }
 
 void showRelevantNodes(std::vector<Node> nodes)
 {
-	for (auto node = nodes.begin(); node != nodes.end(); node++)
+	int i = 0;
+	for (auto node = nodes.begin(); node != nodes.end(); node++, i++)
 		std::cout << (*node).getX() << " " << (*node).getY() << " ENDPOINT:" << (*node).isEnd() << std::endl;
 } 

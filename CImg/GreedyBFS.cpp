@@ -5,7 +5,7 @@
 #include<iostream>
 #include<vector>
 #include<stdlib.h>
-#define MAX 8
+#define MAX 18
 
 using namespace std;
 
@@ -152,7 +152,7 @@ int main()
 	vector<NODE> frontier(vectorSize);
 
 	// Get the start node. Note that, the indexing starts from zero
-	int start; 
+	int start;
 	cout << "Enter the starting node: ";
 	cin >> start;
 

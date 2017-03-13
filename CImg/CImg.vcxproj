@@ -147,14 +147,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Graph.cpp" />
     <ClCompile Include="Maze.cpp" />
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="D:\Study\mazesolving\examples\small.png" />
     <Image Include="tiny.png" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Graph.h" />
     <ClInclude Include="Link.h" />
     <ClInclude Include="Maze.h" />
     <ClInclude Include="Node.h" />

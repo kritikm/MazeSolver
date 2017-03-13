@@ -24,9 +24,15 @@
     <ClCompile Include="Node.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
+    <ClCompile Include="Graph.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="tiny.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="D:\Study\mazesolving\examples\small.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
@@ -38,6 +44,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Node.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Graph.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
