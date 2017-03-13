@@ -29,17 +29,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="tiny.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="D:\Study\mazesolving\examples\small.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="tinySolution.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="Maze.h">
       <Filter>Header Files</Filter>
     </ClInclude>

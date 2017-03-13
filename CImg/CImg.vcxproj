@@ -153,11 +153,6 @@
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="D:\Study\mazesolving\examples\small.png" />
-    <Image Include="tiny.png" />
-    <Image Include="tinySolution.png" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="Graph.h" />
     <ClInclude Include="Link.h" />
     <ClInclude Include="Maze.h" />

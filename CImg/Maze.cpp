@@ -2,9 +2,6 @@
 #include"Maze.h"
 #include"Graph.h"
 
-#include<iostream>
-using namespace std;
-
 int manhattanDistance(Node, Node);
 
 Maze::Maze(int ** maze, int width, int height)
@@ -49,16 +46,12 @@ void Maze::makeRelevantNodes()
 				if ((maze[i][j + 1] == 1 || maze[i][j - 1] == 1) && (maze[i + 1][j] == 1 || maze[i - 1][j] == 1))
 					nodes.push_back(Node(i, j, false));
 
-	cout << "Got relevant nodes\n";
-
 	makeConnections();
 	makeHeuristics();
 }
 
 void Maze::makeConnections()
 {
-	cout << "making connections\n";
-
 	int nNodes = nodes.size();
 
 	graph = new int*[nNodes];
@@ -81,8 +74,6 @@ void Maze::makeConnections()
 			(*trav).setBottom(&getNodeWithXY(row + 1, col), 1);
 			(*trav).setLeft(NULL, -1);
 			(*trav).setRight(NULL, -1);
-			cout << "Got start\n";
-
 			continue;
 		}
 		if (pos == 1)	//end
@@ -91,13 +82,11 @@ void Maze::makeConnections()
 			(*trav).setBottom(NULL, -1);
 			(*trav).setLeft(NULL, -1);
 			(*trav).setRight(NULL, -1);
-			cout << "Got goal\n";
 			continue;
 		}
 
 		int cost = 1;
 
-		cout << "Setting bottom\n";
 		//for bottom link
 		if (maze[row + 1][col] == 0)
 			(*trav).setBottom(NULL, -1);
@@ -108,13 +97,11 @@ void Maze::makeConnections()
 			int prev = nodeCheck;
 			while (nodeCheck == -1 && row <= height)
 			{
-				cout << "Looped bottom\n";
 				cost++;
 				row++;
 				if (maze[row][col] == 0)
 				{
 					row = height + 1;
-					cout << "Broke in bottom\n";
 					break;
 				}
 
@@ -130,9 +117,7 @@ void Maze::makeConnections()
 			else
 				(*trav).setBottom(NULL, -1);
 		}
-		cout << "Set Bottom\n";
 
-		cout << "Setting Top\n";
 		//for top link
 		cost = 1;
 		col = (*trav).getY();
@@ -146,13 +131,11 @@ void Maze::makeConnections()
 			int prev = nodeCheck;
 			while (nodeCheck == -1 && row > -1)
 			{
-				cout << "Looped top\n";
 				cost++;
 				row--;
 				if (maze[row][col] == 0)
 				{
 					row = -1;
-					cout << "Broke in top\n";
 					break;
 				}
 
@@ -168,9 +151,7 @@ void Maze::makeConnections()
 			else
 				(*trav).setTop(NULL, -1);
 		}
-		cout << "Set Top\n";
 
-		cout << "Setting Left\n";
 		//for left link
 		cost = 1;
 		col = (*trav).getY() - 1;	//the element on the left
@@ -184,13 +165,11 @@ void Maze::makeConnections()
 			int prev = nodeCheck;
 			while (nodeCheck == -1 && col > -1)
 			{
-				cout << "Looped left\n";
 				cost++;
 				col--;
 				if (maze[row][col] == 0)
 				{
 					col = -1;
-					cout << "Broke in left\n";
 					break;
 				}
 
@@ -207,9 +186,7 @@ void Maze::makeConnections()
 				(*trav).setLeft(NULL, -1);
 
 		}
-		cout << "Set Left\n";
 
-		cout << "Setting Right\n";
 		//for right link
 		cost = 1;
 		col = (*trav).getY() + 1;	//the element on the right
@@ -223,13 +200,11 @@ void Maze::makeConnections()
 			int prev = nodeCheck;
 			while (nodeCheck == -1 && col <= width)
 			{
-				cout << "Looped right\n";
 				cost++;
 				col++;
 				if (maze[row][col] == 0)
 				{
 					col = width + 1;
-					cout << "Broke in right\n";
 					break;
 				}
 				prev = nodeCheck;
@@ -244,7 +219,6 @@ void Maze::makeConnections()
 			else
 				(*trav).setRight(NULL, -1);
 		}
-		cout << "Set Right\n";
 	}
 }
 
