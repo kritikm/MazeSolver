@@ -7,15 +7,21 @@ using namespace cimg_library;
 
 void showRelevantNodes(std::vector<Node>);
 
-
-void printMatrix(int ** mat,int width,int height) {
-	for (int i = 0; i < width; i++) {
-		for (int j = 0; j < height; j++) {
-			std::cout << mat[i][j];
-		}
-		std::cout << "\n";
+void printPathToImage(const cimg_library::CImg<unsigned char> &image, std::vector<Node> &path, const char * outputPath) 
+{
+	cimg_library::CImg<unsigned char> outputImage = image;
+	for (int i = 0; i < path.size(); i++) 
+	{
+		std::cout << "Color at " << path.at(i).getX() << " " << path.at(i).getY() << std::endl;
+		outputImage(path.at(i).getX(), path.at(i).getY(), 0, 0) = 255;  //Set Red component to 255
+		outputImage(path.at(i).getX(), path.at(i).getY(), 0, 1)
+			= outputImage(path.at(i).getX() , path.at(i).getY(), 0, 2)
+			= 0; //Set Blue and Green component to 0
 	}
+
+	outputImage.save(outputPath);
 }
+
 
 //int main(int * argCount, char * args[])
 int main()
@@ -64,11 +70,13 @@ int main()
 	//std::vector<Node> relevantNodes = maze.getNodes();
 	//showRelevantNodes(relevantNodes);
 
-	//auto path = maze.getPath();
+	auto path = maze.getPath();
 
 	//std::cout << "got path\n";
 
 	//showRelevantNodes(path);
+
+	printPathToImage(image, path, "tinySolution.bmp");
 
 	return 0;
 }
