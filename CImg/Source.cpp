@@ -11,13 +11,13 @@ void showRelevantNodes(std::vector<Node>);
 void printMatrix(int ** mat,int width,int height) {
 	for (int i = 0; i < width; i++) {
 		for (int j = 0; j < height; j++) {
-			std::cout << mat[i][j];
+			std::cout << mat[i][j]<<" ";
 		}
 		std::cout << "\n";
 	}
 }
 
-int main()
+int main1()
 {
 	CImg<unsigned char> image("tiny.bmp");
 
@@ -33,7 +33,8 @@ int main()
 			mat[i][j] = image(j, i, 0, 0) / 255;
 	}
 
-	//printMatrix(mat, width, height);
+	printMatrix(mat, width, height);
+	return 0;
 
 	Maze maze(mat, width, height);
 

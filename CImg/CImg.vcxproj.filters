@@ -27,12 +27,18 @@
     <ClCompile Include="SaveToFile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="tiny.png">
+    <Image Include="normal.bmp">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="normal.bmp">
+    <Image Include="tiny.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="test.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
@@ -44,6 +50,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Node.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SaveToFile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
