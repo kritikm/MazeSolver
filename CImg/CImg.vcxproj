@@ -150,8 +150,10 @@
     <ClCompile Include="Maze.cpp" />
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="SaveToFile.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="normal.bmp" />
     <Image Include="tiny.png" />
   </ItemGroup>
   <ItemGroup>
