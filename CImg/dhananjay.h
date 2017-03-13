@@ -27,3 +27,6 @@ void setupNodes(const cimg_library::CImg<unsigned char> &image, std::vector<std:
 
 //dfs.cpp
 std::vector<std::pair<int, int>> dfs(Node * start, Node* end);
+
+//SaveToFile.cpp
+void printPathToImage(const cimg_library::CImg<unsigned char> &image, const std::vector<std::pair<int, int>> &path, const char * outputPath);

@@ -147,6 +147,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="bfs.cpp" />
     <ClCompile Include="dfs.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Maze.cpp" />
@@ -156,16 +157,22 @@
     <ClCompile Include="setup.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="normal.bmp" />
-    <Image Include="test.bmp" />
-    <Image Include="tiny.bmp" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="Link.h" />
     <ClInclude Include="Maze.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="dhananjay.h" />
-    <ClInclude Include="SaveToFile.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="images\braid200.bmp" />
+    <Image Include="images\braid2k.bmp" />
+    <Image Include="images\combo6k.bmp" />
+    <Image Include="images\normal.bmp" />
+    <Image Include="images\perfect10k.bmp" />
+    <Image Include="images\perfect15k.png" />
+    <Image Include="images\perfect2k.bmp" />
+    <Image Include="images\perfect4k.bmp" />
+    <Image Include="images\small.bmp" />
+    <Image Include="images\tiny.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

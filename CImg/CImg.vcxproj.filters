@@ -36,17 +36,9 @@
     <ClCompile Include="setup.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="normal.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="tiny.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="test.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
+    <ClCompile Include="bfs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Maze.h">
@@ -58,11 +50,40 @@
     <ClInclude Include="Node.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SaveToFile.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="dhananjay.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="images\braid2k.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\braid200.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\combo6k.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\normal.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\perfect2k.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\perfect4k.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\perfect10k.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\perfect15k.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\small.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\tiny.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
