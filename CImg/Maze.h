@@ -8,7 +8,7 @@ private:
 	int ** maze, ** graph;
 	int width, height;
 	std::vector<Node> nodes;
-	
+
 public:
 	Maze(int **, int, int);
 	int ** getMaze();
@@ -16,6 +16,8 @@ public:
 	int getMazeWidth();
 	int getMazeHeight();
 	std::vector<Node> getNodes();
+
+	std::vector<Node> getPath();
 
 	void makeRelevantNodes();
 	void makeConnections();

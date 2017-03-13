@@ -1,3 +1,4 @@
+#pragma once
 #include"Maze.h"
 
 Maze::Maze(int ** maze, int width, int height)
@@ -186,4 +187,11 @@ Node Maze::getNodeWithXY(int x, int y)
 	for (auto trav = nodes.begin(); trav != nodes.end(); trav++)
 		if ((*trav).getX() == x && (*trav).getY() == y)
 			return (*trav);
+}
+
+std::vector<Node> Maze::getPath()
+{
+	std::vector<Node> path;
+
+	return path;
 }
