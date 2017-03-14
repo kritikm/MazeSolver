@@ -15,54 +15,31 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="dfs.cpp">
+    <ClCompile Include="Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GreedyBFS.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Maze.cpp">
+      <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Node.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Graph.cpp">
+      <Filter>Header Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="dhananjay.h">
+    <ClInclude Include="Maze.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="images\braid2k.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="images\braid200.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="images\combo6k.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="images\normal.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="images\perfect2k.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="images\perfect4k.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="images\perfect10k.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="images\perfect15k.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="images\small.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="images\tiny.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="output\output.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
+    <ClInclude Include="Link.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Graph.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
