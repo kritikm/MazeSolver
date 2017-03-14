@@ -10,7 +10,7 @@ void printPathToImage(const cimg_library::CImg<unsigned char> &, std::vector<Nod
 
 int main()
 {
-	std::string inputPath = "tiny.bmp";
+	std::string inputPath = "images/tiny.bmp";
 	std::string outputPath = "tinySol.bmp";
 	cimg_library::CImg<unsigned char> image(inputPath.c_str());
 
