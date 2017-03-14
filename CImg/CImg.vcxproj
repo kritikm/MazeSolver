@@ -18,6 +18,27 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dfs.cpp" />
+    <ClCompile Include="dgbfs.cpp" />
+    <ClCompile Include="dhananjay.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="dhananjay.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="images\braid200.bmp" />
+    <Image Include="images\braid2k.bmp" />
+    <Image Include="images\combo6k.bmp" />
+    <Image Include="images\normal.bmp" />
+    <Image Include="images\perfect10k.bmp" />
+    <Image Include="images\perfect15k.png" />
+    <Image Include="images\perfect2k.bmp" />
+    <Image Include="images\perfect4k.bmp" />
+    <Image Include="images\small.bmp" />
+    <Image Include="images\tiny.bmp" />
+    <Image Include="output.bmp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{7BB9EB97-71F5-4E87-B7CA-AAE37801EEF9}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
@@ -146,18 +167,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="Graph.cpp" />
-    <ClCompile Include="Maze.cpp" />
-    <ClCompile Include="Node.cpp" />
-    <ClCompile Include="Source.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Graph.h" />
-    <ClInclude Include="Link.h" />
-    <ClInclude Include="Maze.h" />
-    <ClInclude Include="Node.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

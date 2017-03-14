@@ -11,41 +11,29 @@ vector<pair<int, int>> dfs(Node * start, Node* end) {
 	stack.push(start);
 	Node *current = nullptr;
 	vector<pair<int, int>> path;
+	Node* childrens[4];
+
 	while (!stack.empty()) {
 		current = stack.top();
 		stack.pop();
 		current->visited = true;
 		if (current == end) {
-			while (current) {
-				//cout << current->x << " " << current->y << "\n";
-				path.push_back(make_pair(current->x, current->y));
-				current = current->previous;
+			return backtrack(current);
+		}
+
+		childrens[0] = current->top;
+		childrens[1] = current->bottom;
+		childrens[2] = current->left;
+		childrens[3] = current->right;
+
+		for (int i = 0; i < 4; i++) {
+			if (childrens[i] && !childrens[i]->visited) {
+				stack.push(childrens[i]);
+				childrens[i]->previous = current;
 			}
-			reverse(path.begin(), path.end());
-			return path;
-		}
-		if (current->top && !current->top->visited) {
-			stack.push(current->top);
-			current->top->previous = current;
-		}
-
-		if (current->bottom && !current->bottom->visited) {
-			stack.push(current->bottom);
-			current->bottom->previous = current;
-
-		}
-		if (current->left && !current->left->visited) {
-			stack.push(current->left);
-			current->left->previous = current;
-
-		}
-		if (current->right && !current->right->visited) {
-			stack.push(current->right);
-			current->right->previous = current;
 		}
 	}
-	path.push_back(make_pair(0, 0));
-	return path;
+	return backtrack(nullptr);   // No Path Found
 
 }
 
