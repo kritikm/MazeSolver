@@ -1,6 +1,7 @@
 #include <stack>  
 #include <vector>
 #include "dhananjay.h"
+#include<iostream>
 
 using namespace std;
 
@@ -10,14 +11,13 @@ vector<pair<int, int>> dfs(Node * start, Node* end) {
 	stack.push(start);
 	Node *current = nullptr;
 	vector<pair<int, int>> path;
-
 	while (!stack.empty()) {
 		current = stack.top();
 		stack.pop();
 		current->visited = true;
 		if (current == end) {
 			while (current) {
-				//cout << current->y << " " << current->x << "\n";
+				//cout << current->x << " " << current->y << "\n";
 				path.push_back(make_pair(current->x, current->y));
 				current = current->previous;
 			}
@@ -28,6 +28,7 @@ vector<pair<int, int>> dfs(Node * start, Node* end) {
 			stack.push(current->top);
 			current->top->previous = current;
 		}
+
 		if (current->bottom && !current->bottom->visited) {
 			stack.push(current->bottom);
 			current->bottom->previous = current;
@@ -43,6 +44,7 @@ vector<pair<int, int>> dfs(Node * start, Node* end) {
 			current->right->previous = current;
 		}
 	}
+	path.push_back(make_pair(0, 0));
 	return path;
 
 }

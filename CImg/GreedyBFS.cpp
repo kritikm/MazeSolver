@@ -128,7 +128,7 @@ void greedyBestFirst(NODEX a[MAX][MAX], vector<int>& heuristic, vector<NODE>& ex
 	greedyBestFirst(a, heuristic, explored, frontier, frontier[0].nodeID, goal);
 }
 
-int main()
+int main2()
 {
 	// Get the distance matrix
 	cout << "Enter the distance matrix: \n";

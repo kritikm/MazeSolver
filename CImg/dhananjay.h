@@ -10,18 +10,16 @@ struct Node {
 	Node* right;
 	Node* previous;
 
-	int ctop, cbottom, cleft, cright;
-	int x, y;
+	//int ctop, cbottom, cleft, cright;
+	unsigned short  x, y;
 	bool visited;
-
 };
 
 typedef struct Node Node;
 
 
 //setup.cpp
-void setupNodes(const cimg_library::CImg<unsigned char> &image, std::vector<std::vector<Node*>> &nodes, Node* &start, Node* &end);
-
+void setupNodes(const cimg_library::CImg<unsigned char> &image, Node* &start, Node* &end);
 
 
 
