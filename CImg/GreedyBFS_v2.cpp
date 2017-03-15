@@ -92,7 +92,7 @@ void removeFromFrontier(vector<NODE>& frontier, vector<NODE>& explored, int goal
 		return;
 	// Remove the first element from frontier and put it in explored
 	addToExplored(explored, frontier.at(0));
-	cout << "\nRemoving: " << frontier.at(0).nodeID<<"  "<<frontier.at(0).fn<<endl<<endl;
+	// cout << "\nRemoving: " << frontier.at(0).nodeID<<"  "<<frontier.at(0).fn<<endl<<endl;
 	int removed = frontier.at(0).nodeID;
 	for (int i = 0; i < n-1; i++)
 		frontier.at(i) = frontier.at(i + 1);
