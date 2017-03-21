@@ -43,10 +43,10 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="tiny.bmp">
+    <Image Include="small.bmp">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="tinySol.bmp">
+    <Image Include="smallSol.bmp">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="normal.bmp">
@@ -55,10 +55,7 @@
     <Image Include="normalSol.bmp">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="test.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="small.bmp">
+    <Image Include="braid200.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

@@ -1,5 +1,8 @@
 #pragma once
 #include"Graph.h"
+#include<iostream>
+
+using namespace std;
 
 typedef struct nodex
 {
@@ -10,6 +13,7 @@ typedef struct nodex
 
 typedef struct node
 {
+	std::vector<int> _path;
 	bool visited = false;
 	int nodeID;
 	int fn;
@@ -64,6 +68,8 @@ void execGBFS(NODEX ** a, std::vector<int> & heuristic, std::vector<NODE> & expl
 			for (int s = 0; s < size; s++)
 				a[s][frontier[0].nodeID].visited = true;
 			NODE temp;
+			temp._path.insert(temp._path.end(), frontier.at(0)._path.begin(), (frontier.at(0)._path).end());
+			temp._path.push_back(i);
 			temp.visited = true;
 			temp.fn = heuristic[i];
 			temp.nodeID = i;
@@ -81,6 +87,7 @@ void execGBFS(NODEX ** a, std::vector<int> & heuristic, std::vector<NODE> & expl
 	if (++_removed == 2) // a terminal node has been reached
 	{
 		int last_path_element;
+		int f = 0;
 		while (1)
 		{
 			int path_len = path.size() - 1;
@@ -88,11 +95,7 @@ void execGBFS(NODEX ** a, std::vector<int> & heuristic, std::vector<NODE> & expl
 			if (isNeighbour(a, frontier.at(0).nodeID, last_path_element))
 				break;
 			else
-			{
-				//cout << "pppoooooopped " << last_path_element;
 				path.pop_back();
-			}
-			//displayResult(explored);
 		}
 	}
 
@@ -136,14 +139,18 @@ int removeFromFrontier(std::vector<NODE> &frontier, std::vector<NODE> &explored,
 	addToExplored(explored, frontier.at(0));
 	//cout << "\nRemoving: " << frontier.at(0).nodeID<<"  "<<frontier.at(0).fn<<endl<<endl;
 	int removed = frontier.at(0).nodeID;
+	if (removed == goal)
+	{
+		path = frontier.at(0)._path;
+		return 1;
+	}
 	for (int i = 0; i < n - 1; i++)
 		frontier.at(i) = frontier.at(i + 1);
-	frontier.pop_back(); // remove the last element (duplicate)
+	frontier.pop_back();// remove the last element (duplicate)
 	int pathLength = path.size();
 	path.resize(pathLength + 1);
 	path[pathLength - 1] = removed;	// Goal is found! Program exits here
-	if (removed == goal)
-		return 1;
+
 	return 0;
 
 }

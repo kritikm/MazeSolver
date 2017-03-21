@@ -11,8 +11,8 @@ cimg_library::CImg<unsigned char> image;
 
 int main()
 {
-	std::string inputPath = "small.bmp";
-	std::string outputPath = "test.bmp";
+	std::string inputPath = "braid200.bmp";
+	std::string outputPath = "braid200Sol.bmp";
 
 	image = cimg_library::CImg<unsigned char>(inputPath.c_str());
 
@@ -33,6 +33,8 @@ int main()
 	maze.makeRelevantNodes();
 
 	auto path = maze.getPath();
+
+	//showRelevantNodes(path);
 
 	cimg_library::CImg<unsigned char> output = getImageWithPath(image, path);
 

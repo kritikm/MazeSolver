@@ -248,7 +248,8 @@ std::vector<Node> Maze::getPath()
 	std::vector<int> pathNodes = greedyBestFirst(graph, heuristic, 0, 1);
 
 	std::vector<Node> path;
-	for (int i = 0; i < pathNodes.size() - 1; i++)
+	path.push_back(nodes.at(0));
+	for (int i = 0; i < pathNodes.size(); i++)
 		path.push_back(nodes.at(pathNodes.at(i)));
 
 	return path;

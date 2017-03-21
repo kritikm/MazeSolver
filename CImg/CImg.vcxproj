@@ -159,12 +159,11 @@
     <ClInclude Include="Node.h" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="braid200.bmp" />
     <Image Include="normal.bmp" />
     <Image Include="normalSol.bmp" />
     <Image Include="small.bmp" />
-    <Image Include="test.bmp" />
-    <Image Include="tiny.bmp" />
-    <Image Include="tinySol.bmp" />
+    <Image Include="smallSol.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
