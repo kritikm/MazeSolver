@@ -62,6 +62,9 @@
     <ClCompile Include="dhananjay\Maze.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="dhananjay\astar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dhananjay\Maze.h">

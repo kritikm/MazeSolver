@@ -11,7 +11,7 @@ class mycomparison
 public:
 	bool operator() (Node* &lhs, Node* &rhs)
 	{
-		return lhs->heuristic > rhs->heuristic;
+		return lhs->h > rhs->h;
 	}
 };
 
@@ -38,7 +38,7 @@ bool gbfs(Maze &maze) {
 
 		for (int i = 0; i < 4; i++) {
 			if (childrens[i] && !childrens[i]->visited) {
-				if (childrens[i]->heuristic < current->heuristic) {
+				if (childrens[i]->h < current->h) {
 					frontier.push(current);
 					frontier.push(childrens[i]);
 					childrens[i]->previous = current;

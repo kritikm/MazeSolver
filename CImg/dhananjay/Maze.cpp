@@ -41,6 +41,7 @@ void Maze::setupNodes() {
 	previousRow[this->start->x] = start;
 
 	unsigned int count = 0;
+	int horizontalCost;
 
 	/*
 	*Initialize top and left of current node
@@ -51,29 +52,39 @@ void Maze::setupNodes() {
 	*/
 	for (int i = 1; i < rows - 1; i++) {
 		previous = nullptr;
+		horizontalCost = 1;
 		for (int j = 1; j < columns - 1; j++) {
 			if ((image(j, i, 0, 0) == 255)) {
 				if (image(j, i - 1, 0, 0) == 0 && image(j, i + 1, 0, 0) == 0) {
+					horizontalCost++;
 					previousRow[j] = nullptr;
 					continue;
 				}
 
 				temp = new Node(j, i);
-				temp->heuristic = std::abs(end->x - temp->x) + std::abs(end->y - temp->y);
+				temp->h = std::abs(end->x - temp->x) + std::abs(end->y - temp->y);
 
 				if (previousRow[j]) {
 					temp->top = previousRow[j];
+					temp->tcost = 1;
 					temp->top->bottom = temp;
+					temp->top->bcost = 1;
+
 				}
 
-				temp->left = previous;
 				if (previous) {
+					temp->left = previous;
+					temp->lcost = temp->x - temp->left->x;
 					previous->right = temp;
+					previous->rcost = temp->lcost;
 				}
 
 				currentRow[j] = temp;
 				previous = temp;
 				count++;
+
+			//	std::cout << temp->x << " " << temp->y << " " << temp->lcost << "\n";
+
 			}
 			else {
 				previous = nullptr;
@@ -90,14 +101,14 @@ void Maze::setupNodes() {
 
 
 	/* Initialize top of end and bottom of top of end*/
-	if (previousRow[end->x]) {
 		end->top = previousRow[end->x];
+		end->tcost = 1;
 		end->top->bottom = end;
-	}
+		end->top->bcost = 1;
 
 	/* Set heuristics of start and end node*/
-	start->heuristic = std::abs(end->x - start->x) + std::abs(end->y - start->y);
-	end->heuristic = 0;
+	start->h = std::abs(end->x - start->x) + std::abs(end->y - start->y);
+	end->h = 0;
 
 
 	delete[] currentRow;

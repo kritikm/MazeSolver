@@ -6,10 +6,11 @@ using namespace std;
 
 bool dfs(Maze &maze);
 bool gbfs(Maze &maze);
+bool astar(Maze &maze);
 
 
 int main() {
-	string inputFile = "images/braid2k.bmp";
+	string inputFile = "images/perfect4k.bmp";
 	string outputFile = "output.bmp";
 
 	Maze m(inputFile);
@@ -20,7 +21,9 @@ int main() {
 
 
 	bool pathFound;
-	pathFound = gbfs(m);			// Greedy Best First Search
+
+	pathFound = astar(m);			// A-Star
+	//pathFound = gbfs(m);			// Greedy Best First Search
 	//pathFound = dfs(m);           // Depth First  Search
 
 	if (pathFound) {

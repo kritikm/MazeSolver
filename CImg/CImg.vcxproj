@@ -32,6 +32,7 @@
     <Image Include="output.bmp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="dhananjay\astar.cpp" />
     <ClCompile Include="dhananjay\dfs.cpp" />
     <ClCompile Include="dhananjay\gbfs.cpp" />
     <ClCompile Include="dhananjay\main.cpp" />
