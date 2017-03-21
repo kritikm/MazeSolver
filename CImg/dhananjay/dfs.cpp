@@ -1,23 +1,21 @@
-#include "dhananjay.h"
-
+#include "Maze.h"
+#include "Node.h"
 #include <stack>  
 
 using namespace std;
 
-
-vector<pair<int, int>> dfs(Node * start, Node* end) {
+bool dfs(Maze &maze) {
 	std::stack<Node *> stack;
 	Node *current = nullptr;
-	vector<pair<int, int>> path;
 	Node* childrens[4];
 
-	stack.push(start);
+	stack.push(maze.start);
 	while (!stack.empty()) {
 		current = stack.top();
 		stack.pop();
 		current->visited = true;
-		if (current == end) {
-			return backtrack(current);
+		if (current == maze.end) {
+			return true;
 		}
 
 		childrens[0] = current->top;
@@ -32,7 +30,7 @@ vector<pair<int, int>> dfs(Node * start, Node* end) {
 			}
 		}
 	}
-	return backtrack(nullptr);   // No Path Found
+	return false;   // No Path Found
 
 }
 

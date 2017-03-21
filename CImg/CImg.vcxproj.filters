@@ -53,15 +53,21 @@
     <ClCompile Include="dhananjay\dfs.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="dhananjay\dgbfs.cpp">
+    <ClCompile Include="dhananjay\gbfs.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="dhananjay\dhananjay.cpp">
+    <ClCompile Include="dhananjay\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dhananjay\Maze.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="dhananjay\dhananjay.h">
+    <ClInclude Include="dhananjay\Maze.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dhananjay\Node.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
