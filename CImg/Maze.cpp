@@ -1,6 +1,9 @@
 #pragma once
 #include"Maze.h"
 #include"Graph.h"
+#include<iostream>
+
+using namespace std;
 
 int manhattanDistance(Node, Node);
 
@@ -65,26 +68,28 @@ void Maze::makeConnections()
 	int pos = 0;
 	for (auto trav = nodes.begin(); trav != nodes.end(); trav++, pos++)
 	{
-		int col = (*trav).getY();
-		int row = (*trav).getX();
+		int currentCol = (*trav).getY();
+		int currentRow = (*trav).getX();
 
 		if (pos == 0)	//start
 		{
 			(*trav).setTop(NULL, -1);
-			(*trav).setBottom(&getNodeWithXY(row + 1, col), 1);
+			(*trav).setBottom(&getNodeWithXY(currentRow + 1, currentCol), 1);
 			(*trav).setLeft(NULL, -1);
 			(*trav).setRight(NULL, -1);
 			continue;
 		}
 		if (pos == 1)	//end
 		{
-			(*trav).setTop(&getNodeWithXY(row - 1, col), 1);
+			(*trav).setTop(&getNodeWithXY(currentRow - 1, currentCol), 1);
 			(*trav).setBottom(NULL, -1);
 			(*trav).setLeft(NULL, -1);
 			(*trav).setRight(NULL, -1);
 			continue;
 		}
 
+		int row = currentRow;
+		int col = currentCol;
 		int cost = 1;
 
 		//for bottom link

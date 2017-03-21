@@ -5,14 +5,16 @@
 #include<iostream>
 
 void showRelevantNodes(std::vector<Node>);
-void printPathToImage(const cimg_library::CImg<unsigned char> &, std::vector<Node> &, const std::string);
+cimg_library::CImg<unsigned char> getImageWithPath(const cimg_library::CImg<unsigned char> , std::vector<Node>);
 
+cimg_library::CImg<unsigned char> image;
 
 int main()
 {
-	std::string inputPath = "tiny.bmp";
-	std::string outputPath = "tinySol.bmp";
-	cimg_library::CImg<unsigned char> image(inputPath.c_str());
+	std::string inputPath = "small.bmp";
+	std::string outputPath = "test.bmp";
+
+	image = cimg_library::CImg<unsigned char>(inputPath.c_str());
 
 	auto height = image.height();
 	auto width = image.width();
@@ -32,7 +34,9 @@ int main()
 
 	auto path = maze.getPath();
 
-	printPathToImage(image, path, outputPath);
+	cimg_library::CImg<unsigned char> output = getImageWithPath(image, path);
+
+	output.save(outputPath.c_str());
 	 
 	return 0;
 }
@@ -44,8 +48,8 @@ void showRelevantNodes(std::vector<Node> nodes)
 		std::cout << (*node).getX() << " " << (*node).getY() << " ENDPOINT:" << (*node).isEnd() << std::endl;
 } 
 
-void printPathToImage(const cimg_library::CImg<unsigned char> &image, std::vector<Node> &path, const std::string outputPath)
-{
+cimg_library::CImg<unsigned char> getImageWithPath(const cimg_library::CImg<unsigned char> image, std::vector<Node> path)
+{	
 	cimg_library::CImg<unsigned char> outputImage = image;
 	for (int i = 0; i < path.size() - 1; i++)
 	{
@@ -79,5 +83,6 @@ void printPathToImage(const cimg_library::CImg<unsigned char> &image, std::vecto
 		outputImage(row, column, 0, 0) = 255;
 		outputImage(row, column, 0, 1) = outputImage(row, column, 0, 2) = 0;
 	}
-	outputImage.save(outputPath.c_str());
+
+	return outputImage;
 }
