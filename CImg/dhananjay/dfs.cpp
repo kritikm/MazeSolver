@@ -7,11 +7,11 @@ using namespace std;
 
 vector<pair<int, int>> dfs(Node * start, Node* end) {
 	std::stack<Node *> stack;
-	stack.push(start);
 	Node *current = nullptr;
 	vector<pair<int, int>> path;
 	Node* childrens[4];
 
+	stack.push(start);
 	while (!stack.empty()) {
 		current = stack.top();
 		stack.pop();

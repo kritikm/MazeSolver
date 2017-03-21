@@ -2,6 +2,7 @@
 
 #include"../CImg.h"
 #include <vector>
+#include <string>
 
 struct Node {
 	Node* top;
@@ -9,19 +10,27 @@ struct Node {
 	Node* left;
 	Node* right;
 	Node* previous;
-	unsigned int heuristic;
+	int heuristic;
 	//int ctop, cbottom, cleft, cright;
-	unsigned short  x, y;
+	int  x, y;
 	bool visited;
+	Node(unsigned int x1, unsigned int y1 ) {
+		x = x1;
+		y = y1;
+		visited = false;
+		top = bottom = left = right = previous = nullptr;
+	}
 };
 
 typedef struct Node Node;
 
 
 //setup.cpp
-void setupNodes(const cimg_library::CImg<unsigned char> &image, Node* &start, Node* &end);
+void setupNodes(std::string inputFile, Node* &start, Node* &end);
+
 std::vector<std::pair<int, int>> backtrack(Node* start);
 
+void printPathToImage(std::string inputFile, const std::vector<std::pair<int, int>> &path, std::string outputFile);
 
 
 //dfs.cpp
@@ -29,6 +38,3 @@ std::vector<std::pair<int, int>> dfs(Node * start, Node* end);
 
 //dgbfs.cpp
 std::vector<std::pair<int, int>> gbfs(Node * start, Node* end);
-
-//SaveToFile.cpp
-void printPathToImage(const cimg_library::CImg<unsigned char> &image, const std::vector<std::pair<int, int>> &path, const char * outputPath);
